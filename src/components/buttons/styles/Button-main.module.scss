@@ -1,0 +1,19 @@
+@import "../../../../styles/colors.module.scss";
+.button_main {
+  button {
+    border: 1px solid $gray;
+    height: 2.8rem;
+    border-radius: 4px;
+    background-color: unset;
+    color: $green_dark;
+    font-size: 1rem;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    &:hover {
+      background-color: $green_main;
+      border: none;
+      color: $white;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

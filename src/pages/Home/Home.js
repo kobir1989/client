@@ -1,12 +1,12 @@
 import * as React from 'react';
-import Navbar from '../../components/navbar/Navbar';
+import PageLayout from "../../components/pageLayout/PageLayout"
 
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
-    </div>
+   <PageLayout>
+    <div>hdhdfd</div>
+   </PageLayout>
   )
 }
 
