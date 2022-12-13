@@ -1,0 +1,96 @@
+/* Breakpoints mobile first approach */
+/* Mixins for media query */
+/*------------------------------*/
+/*  ul default style override  */
+/*  Flex Mixin  */
+.nav_Wrapper {
+  background-color: #edf3ed;
+}
+.nav_Wrapper .nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1500px;
+  margin: auto;
+  padding: 0.3rem;
+}
+.nav_Wrapper .nav_search {
+  position: relative;
+}
+.nav_Wrapper .nav_search form input {
+  height: 2rem;
+  width: 20rem;
+  border: 1px solid #96ce8b;
+  border-radius: 1.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  outline: none;
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+.nav_Wrapper .nav_search form input:focus {
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+  border: 1px solid #116954;
+}
+.nav_Wrapper .nav_search_icon {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.9rem;
+  color: #727272;
+}
+.nav_Wrapper .nav_logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.nav_Wrapper .nav_logo h4 {
+  font-size: 1.9rem;
+  font-family: "Pacifico", cursive;
+  color: #96ce8b;
+  letter-spacing: 2px;
+  padding: 0;
+  margin: 0;
+}
+.nav_Wrapper .nav_logo img {
+  width: 5.5rem;
+  height: 4rem;
+}
+.nav_Wrapper .nav_links_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+}
+.nav_Wrapper .nav_links_list li {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  color: #727272;
+  letter-spacing: 0.09px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.nav_Wrapper .nav_links_list .cart {
+  position: relative;
+}
+.nav_Wrapper .nav_links_list .wishlist {
+  position: relative;
+}
+.nav_Wrapper .nav_links_list .count {
+  position: absolute;
+  background-color: #96ce8b;
+  color: #fff;
+  width: 1rem;
+  height: 1.2rem;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 600;
+  top: -15%;
+  right: 20%;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}/*# sourceMappingURL=Nav.module.css.map */

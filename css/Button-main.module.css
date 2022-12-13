@@ -1,0 +1,16 @@
+.button_main button {
+  border: 1px solid #d0d0d0;
+  height: 2.8rem;
+  border-radius: 4px;
+  background-color: unset;
+  color: #116954;
+  font-size: 1rem;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+}
+.button_main button:hover {
+  background-color: #96ce8b;
+  border: none;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=Button-main.module.css.map */
