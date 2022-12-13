@@ -1,4 +1,4 @@
-import * as React from "react";
+// import * as React from "react";
 import axios from "axios";
 import toast from 'react-hot-toast';
 import { authenticate } from "./authHelper";
@@ -57,13 +57,13 @@ export const fetchPostRequest = async (
     }
 }
 
-export const fetchPutRequest = async ({ url }) => {
-    const response = axios.put()
-}
+// export const fetchPutRequest = async ({ url }) => {
+//     const response = axios.put()
+// }
 
-export const fetchDeleteRequest = async ({ url }) => {
-    const response = axios.delete()
-}
+// export const fetchDeleteRequest = async ({ url }) => {
+//     const response = axios.delete()
+// }
 
 //Signout
 export const signOut = async () => {
