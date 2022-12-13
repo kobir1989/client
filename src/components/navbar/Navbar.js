@@ -9,15 +9,18 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <div className={styles.nav_Wrapper}>
       <nav className={styles.nav}>
-        <div className={styles.nav_logo}>
-          <img src="/image/logo.png" alt="" />
-          <h4>Trendy Tees</h4>
-        </div>
+        <Link to={"/"}>
+          <div className={styles.nav_logo}>
+            <img src="/image/logo.png" alt="" />
+            <h4>Trendy Tees</h4>
+          </div>
+        </Link>
         <div className={styles.nav_search}>
           <div className={styles.nav_search_icon}><SearchIcon /></div>
           <form>
@@ -25,17 +28,25 @@ const Navbar = () => {
           </form>
         </div>
         <ul className={styles.nav_links_list}>
-          <li>Login <LoginIcon /></li>
-          <li>Signup <AppRegistrationIcon /></li>
-          <li>Logout <ExitToAppIcon /></li>
-          <li>Account <PersonIcon /></li>
+          <Link to={"/login"}>
+            <li>Login <LoginIcon /></li>
+          </Link>
+          <Link to={"/signup"}>
+            <li>Signup <AppRegistrationIcon /></li>
+          </Link>
+          <Link to={"logout"}>
+            <li> Logout <ExitToAppIcon /></li>
+          </Link>
+          <Link to={"/profile"}>
+            <li>Account <PersonIcon /></li>
+          </Link>
           <li className={styles.cart}>
             Shoping Cart
             <span className={styles.count}>0</span> <LocalMallIcon />
           </li>
           <li className={styles.wishlist}>
             Wishlist
-            <span className={styles.count} style={{right:"-0.2rem"}}>0</span><FavoriteBorderIcon />
+            <span className={styles.count} style={{ right: "-0.2rem" }}>0</span><FavoriteBorderIcon />
           </li>
         </ul>
       </nav>

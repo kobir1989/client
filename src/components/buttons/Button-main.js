@@ -4,7 +4,7 @@ import styles from "./styles/Button-main.module.scss"
 const ButtonMain = (props) => {
   return (
     <div className={styles.button_main}>
-        <button style={{width: `${props.width}`}}>
+        <button type='submit' style={{width: `${props.width}`}}>
         {props.children}
         </button>
     </div>
