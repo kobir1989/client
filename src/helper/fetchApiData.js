@@ -64,3 +64,18 @@ export const fetchPutRequest = async ({ url }) => {
 export const fetchDeleteRequest = async ({ url }) => {
     const response = axios.delete()
 }
+
+//Signout
+export const signOut = async () => {
+    try {
+        if (typeof window !== "undefined") {
+            localStorage.removeItem("token");
+            const response = await axios.get(`http://localhost:5000/api/auth/logout`);
+            if (response.status === 200) {
+                toast.success("You are logged out")
+            }
+        }
+    } catch (err) {
+        console.log(err)
+    }
+}
