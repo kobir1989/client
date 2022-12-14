@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Typography, Stack, Avatar, Tab, Tabs, Box } from '@mui/material';
 import { fetchGetRequest } from "../../helper/fetchApiData";
 import { isAuth } from '../../helper/authHelper';
+import TextSkeleton from '../../components/skeleton/TextSkeleton';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -73,6 +74,7 @@ const UserProfile = () => {
                             <Typography variant='p'>Address: Dhaka, Bangladesh</Typography>
                             <Typography variant='p'>Phone: 0174XXXXXXX</Typography>
                             <Typography variant='p'>{apiData?.email}</Typography>
+                            <TextSkeleton />
                         </Box>
                     </Stack>
                 </Box>
