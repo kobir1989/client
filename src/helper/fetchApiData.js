@@ -16,12 +16,9 @@ export const fetchGetRequest = async (
     try {
         const response = await axios.get(`http://localhost:5000/api/${url}`);
         if (response.status === 200) {
-
             setApiData(response.data)
             setIsLoading(false)
             console.log(response)
-
-
         }
     } catch (err) {
         console.log(err);
@@ -33,7 +30,8 @@ export const fetchPostRequest = async (
     url,
     data,
     setIsLoading,
-    setIsError
+    setIsError,
+    next
 ) => {
     setIsLoading(true)
     console.log(data)
@@ -46,7 +44,8 @@ export const fetchPostRequest = async (
         if (response.status === 200) {
             authenticate(response.data, () => {
                 setIsLoading(false);
-                toast.success("Successfull")
+                toast.success("Successfull");
+                next()
             })
 
         }
@@ -69,7 +68,7 @@ export const fetchPostRequest = async (
 export const signOut = async () => {
     try {
         if (typeof window !== "undefined") {
-            localStorage.removeItem("token");
+            localStorage.removeItem("jwt");
             const response = await axios.get(`http://localhost:5000/api/auth/logout`);
             if (response.status === 200) {
                 toast.success("You are logged out")

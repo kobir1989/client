@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
 import { fetchPostRequest } from "../../helper/fetchApiData";
 
-  //TODO: Validation issue//
+//TODO: Validation issue//
 const Signup = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isError, setIsError] = React.useState(null);
@@ -27,14 +27,15 @@ const Signup = () => {
       confirmPassword
     }
 
-    fetchPostRequest("signup", data, setIsLoading, setIsError);
+    fetchPostRequest("signup", data, setIsLoading, setIsError, () => {
+      navigate("/")
+    });
 
     setFirstname("");
     setLastname("");
     setEmail("");
     setPassword("");
     setConfirmpassword("");
-    navigate("/login");
   }
 
   console.log(isError)

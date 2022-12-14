@@ -62,19 +62,21 @@ const Navbar = () => {
             </>
           }
 
-          {isAuth() && (
+          {userInfo?.role === "USER" && (
             <>
               <Link to={"/profile"}>
-                {userInfo?.role === "USER" ?
-                  <li>{userInfo?.name || "Account"} <Avatar sx={{ background: "#96ce8b" }}>N</Avatar>
-                  </li>
-                  :
-                  <li>Admin <AdminPanelSettingsIcon /></li>
-                }
+                <li>{userInfo?.name || "Account"} <Avatar sx={{ background: "#96ce8b" }}>N</Avatar>
+                </li>
               </Link>
-              <li onClick={logoutHandler}> Logout <ExitToAppIcon /></li>
             </>
           )}
+          
+          {userInfo?.role === "ADMIN" && (
+            <Link to={"/admin"}>
+              <li>Admin <AdminPanelSettingsIcon /></li>
+            </Link>
+          )}
+          <li onClick={logoutHandler}> Logout <ExitToAppIcon /></li>
         </ul>
       </nav>
     </div>

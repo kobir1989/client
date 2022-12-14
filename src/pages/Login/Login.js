@@ -20,10 +20,11 @@ const Login = () => {
             email,
             password
         }
-        fetchPostRequest("login", data, setIsLoading, setIsError);
+        fetchPostRequest("login", data, setIsLoading, setIsError, () => {
+            navigate("/")
+        });
         setEmail("");
         setPassword("");
-        navigate("/")
     }
     return (
         <PageLayout>
@@ -54,14 +55,14 @@ const Login = () => {
                             label="Email"
                             type="email"
                             value={email}
-                            helperText={isError ? true : false}
+                            helperText={isError }
                         />
                     </div>
                     <div>
                         <TextField
                             required
                             error={isError ? true : false}
-                            helperText={isError ? true : false}
+                            helperText={isError }
                             onChange={(e) => {
                                 setPassword(e.target.value);
                             }}
