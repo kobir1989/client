@@ -11,7 +11,7 @@ const TextSkeleton = ({ w, h, row = 1 }) => {
     return (
         <Box>
             {rowArr.map((row, i) => (
-                <Box sx={{ width: w || 300, height: h || 20, }} key={i}>
+                <Box sx={{ width: w || 300, height: h || 24, }} key={i}>
                     <Skeleton animation="wave" />
                 </Box>
             ))}

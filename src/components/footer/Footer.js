@@ -10,8 +10,8 @@ const Footer = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        position:"absolute",
-        bottom: "0",
+        // position:"absolute",
+        // bottom: "0px",
         width:"100%"
       }
     }>
