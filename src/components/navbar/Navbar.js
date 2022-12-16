@@ -68,13 +68,16 @@ const Navbar = () => {
               </Link>
             </>
           )}
-          
+
           {userInfo?.role === "ADMIN" && (
             <Link to={"/admin"}>
               <li>Admin <AdminPanelSettingsIcon /></li>
             </Link>
           )}
-          <li onClick={logoutHandler}> Logout <ExitToAppIcon /></li>
+          {isAuth() &&
+            <li onClick={logoutHandler}>
+              Logout <ExitToAppIcon />
+            </li>}
         </ul>
       </nav>
     </div>

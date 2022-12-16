@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PageLayout from "../../components/pageLayout/PageLayout";
 import { getRequest } from "../../helper/apiHelper";
+import Card from '../../components/card/Card';
 
 const Home = () => {
   const [apiData, setApiData] = React.useState([]);
@@ -8,12 +9,22 @@ const Home = () => {
   const [isError, setIsError] = React.useState(false);
 
   React.useEffect(() => {
-    getRequest("product", setIsLoading, setIsError, setApiData);
+    getRequest("products", setIsLoading, setIsError, setApiData);
   }, [])
   console.log(apiData)
   return (
     <PageLayout>
-      <div>hdhdfd</div>
+      <div>
+        {apiData.map((item) => (
+          <Card
+            img={item?.imageUrl}
+            title={item?.title}
+            description={item?.description}
+            price={item?.price}
+          />
+        ))}
+      </div>
+
     </PageLayout>
   )
 }

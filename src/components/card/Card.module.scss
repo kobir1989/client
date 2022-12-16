@@ -1,0 +1,82 @@
+@import "../../../styles/colors.module.scss";
+@import "../../../styles//mixins.module.scss";
+
+.card_wrapper {
+  max-width: 16rem;
+  position: relative;
+  background-color: $white;
+  border-radius: 8px;
+  .card_img_wrapper {
+    width: 100%;
+    height: 18rem;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card_heart_icon {
+      position: absolute;
+      right: 1rem;
+      bottom: 0;
+      z-index: 20;
+      cursor: pointer;
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 20%;
+      background-image: linear-gradient(to bottom, rgba(0, 45, 35, 0), #00140f 90%);
+      z-index: 10;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+    }
+  }
+  .card_text_wrapper {
+    overflow: hidden;
+    color: $black_deep;
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .54rem;
+
+    h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    p {
+      font-size: 1rem;
+      margin: 0;
+    }
+    .price {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $red;
+      margin-bottom: .5rem;
+    }
+  }
+  .card_btn_wrapper {
+    padding: 0 1rem 1rem 1rem;
+
+    .card_btn {
+      @include flex-row-center;
+      gap: 0.5rem;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      width: 6rem;
+      border: 1px solid $green-main;
+      border-radius: 4px;
+      padding: 0.3rem;
+      background: $white;
+      cursor: pointer;
+      &:hover {
+        background-color: $green-main;
+        color: $white;
+      }
+    }
+  }
+}
