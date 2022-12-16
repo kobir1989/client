@@ -32,7 +32,7 @@ export const postRequest = async (
     setIsError,
 ) => {
     setIsLoading(true)
-    console.log(data)
+    console.log(data, "PUTREQ")
     try {
         const response = await axios.post(
             `http://localhost:5000/api/${url}`,
@@ -76,7 +76,7 @@ export const putRequest = async (
 export const deleteRequest = async (url) => {
     try {
         const response = await axios.delete(`http://localhost:5000/api/${url}`);
-        if(response.status === 200){
+        if (response.status === 200) {
             toast.success("Deleted");
         }
 
@@ -99,4 +99,25 @@ export const getCategory = async (url, setIsLoading, setIsError, setCategories) 
         setIsLoading(false)
     }
 
+}
+
+//Admin Page
+export const getAllProducts = async (
+    url,
+    setIsLoading,
+    setIsError,
+    setAllProducts,
+) => {
+    setIsLoading(true)
+    try {
+        const response = await axios.get(`http://localhost:5000/api/${url}`);
+        if (response.status === 200) {
+            setAllProducts(response.data.products)
+            setIsLoading(false)
+            console.log(response)
+        }
+    } catch (err) {
+        console.log(err);
+        setIsLoading(false)
+    }
 }

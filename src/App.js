@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Login from './pages/Login/Login';
-import Signup from './pages/Signup/Signup';
+import Home from "./pages/home/Home";
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 import UserProfile from './pages/userProfile/UserProfile';
 import Admin from './pages/Admin/Admin';
 import {AdminPrivateRoute} from './helper/PrivateRoutes';

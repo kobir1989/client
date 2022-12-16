@@ -54,7 +54,6 @@ const AccountSettings = () => {
       await  getUserProfile()
 
     }
-
     return (
         <Box sx={{ position: "relative" }}>
             {editAccount ? (

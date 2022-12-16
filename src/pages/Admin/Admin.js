@@ -3,10 +3,11 @@ import SideTab from '../../components/tabs/Tab';
 import { Typography, Box, Stack } from '@mui/material';
 import PageLayout from "../../components/pageLayout/PageLayout";
 import AddProducts from './addProducts/AddProducts';
-import AccountSettings from './overview/AccountSettings';
+import AccountSettings from './accountSettings/AccountSettings';
 import { Toaster } from 'react-hot-toast';
 import AddCategory from './category/AddCategory';
 import ManageCategory from './category/ManageCategory';
+import ManageProducts from "../../pages/Admin/manageProducts/ManageProducts"
 
 
 const Admin = () => {
@@ -26,7 +27,7 @@ const Admin = () => {
     },
     {
       lable: "Manage Product",
-      component: () => <div>ddf</div>
+      component: () => <ManageProducts />
     },
     {
       lable: "Manage Category",
