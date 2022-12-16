@@ -1,10 +1,11 @@
 import PageLayout from '../../components/pageLayout/PageLayout';
 import * as React from 'react';
-import { Box, TextField, Stack, LinearProgress } from '@mui/material';
+import { Box, TextField, } from '@mui/material';
 import ButtonMain from "../../components/buttons/Button-main";
 import { Link, useNavigate } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
-import { fetchPostRequest } from "../../helper/fetchApiData";
+import { authPostRequest } from "../../helper/authHelper";
+import LineProgress from '../../components/lineProgress/LineProgress';
 
 //TODO: Validation issue//
 const Signup = () => {
@@ -27,7 +28,7 @@ const Signup = () => {
       confirmPassword
     }
 
-    fetchPostRequest("signup", data, setIsLoading, setIsError, () => {
+    authPostRequest("auth/signup", data, setIsLoading, setIsError, () => {
       navigate("/")
     });
 
@@ -37,15 +38,13 @@ const Signup = () => {
     setPassword("");
     setConfirmpassword("");
   }
-
-  console.log(isError)
   return (
     <PageLayout>
       <h1 className="heading"> Create Your Account</h1>
       <div className="form_wrapper">
-        {isLoading && <Stack sx={{ width: '100%', position: "absolute", top: '0', color: 'grey.500' }} spacing={2}>
-          <LinearProgress color="success" />
-        </Stack>}
+        {isLoading &&
+          <LineProgress />
+        }
         <Box
           component="form"
           sx={{

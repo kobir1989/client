@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Typography, Tab, Tabs, Box } from '@mui/material';
+import { v4 as uuidv4 } from 'uuid';
 
 function a11yProps(index) {
     return {
@@ -13,7 +14,6 @@ const SideTab = ({ components }) => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
-console.log(value)
     return (
         <Box
             sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', mt: 4, p: 4 }}
@@ -24,13 +24,14 @@ console.log(value)
                 value={value}
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
-                sx={{ borderRight: 1, borderColor: 'divider' }}
+                sx={{ borderRight: 1, borderColor: 'divider', width:"30%" }}
             >
                 {components.map((component, i) => (
-                    <Tab label={component.lable} {...a11yProps(i)} />
+                    <Tab label={component.lable} {...a11yProps(i)} 
+                    key={uuidv4()} />
                 ))}
             </Tabs>
-            <Box sx={{ml: 4}}>
+            <Box sx={{ ml: 4, width: "70%"  }}>
                 {components[value].component()}
             </Box>
 

@@ -7,7 +7,6 @@ const CustomSkeleton = ({ variant, h, w, row }) => {
     for (let i = 0; i < row; i++) {
         rowArr.push(i)
     }
-    console.log(rowArr)
     return (
         <Box>
             {rowArr.map((row, i) => (

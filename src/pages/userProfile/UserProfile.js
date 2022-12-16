@@ -1,7 +1,7 @@
 import PageLayout from '../../components/pageLayout/PageLayout';
 import * as React from 'react';
 import { Typography, Stack, Avatar, Box } from '@mui/material';
-import { fetchGetRequest } from "../../helper/fetchApiData";
+import { getRequest } from "../../helper/apiHelper";
 import { isAuth } from '../../helper/authHelper';
 import TextSkeleton from '../../components/skeleton/TextSkeleton';
 import CustomSkeleton from "../../components/skeleton/CustomSkeleton";
@@ -33,7 +33,7 @@ const UserProfile = () => {
     ]
 
     React.useEffect(() => {
-        fetchGetRequest(
+        getRequest(
             `user/${userInfo._id}`,
             setIsLoading,
             setIsError,

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import PageLayout from '../../components/pageLayout/PageLayout';
 import ButtonMain from '../../components/buttons/Button-main';
-import { Box, TextField, Stack, LinearProgress } from '@mui/material';
+import { Box, TextField,  } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom";
-import { fetchPostRequest } from "../../helper/fetchApiData";
+import { authPostRequest } from "../../helper/authHelper";
 import { Toaster } from 'react-hot-toast';
+import LineProgress from '../../components/lineProgress/LineProgress';
 
 
 const Login = () => {
@@ -20,7 +21,7 @@ const Login = () => {
             email,
             password
         }
-        fetchPostRequest("login", data, setIsLoading, setIsError, () => {
+        authPostRequest("auth/login", data, setIsLoading, setIsError, () => {
             navigate("/")
         });
         setEmail("");
@@ -30,15 +31,9 @@ const Login = () => {
         <PageLayout>
             <h1 className="heading">Login to your Account</h1>
             <div className="form_wrapper">
-                {isLoading && <Stack sx={{
-                    width: '100%',
-                    position: "absolute",
-                    top: '0',
-                    color: 'grey.500'
-                }}
-                    spacing={2}>
-                    <LinearProgress color="success" />
-                </Stack>}
+                {isLoading &&
+                    <LineProgress />
+                }
                 <Box
                     component="form"
                     onSubmit={loginHandler}
@@ -55,14 +50,14 @@ const Login = () => {
                             label="Email"
                             type="email"
                             value={email}
-                            helperText={isError }
+                            helperText={isError}
                         />
                     </div>
                     <div>
                         <TextField
                             required
                             error={isError ? true : false}
-                            helperText={isError }
+                            helperText={isError}
                             onChange={(e) => {
                                 setPassword(e.target.value);
                             }}

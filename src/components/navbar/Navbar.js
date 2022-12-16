@@ -9,14 +9,12 @@ import LocalMallIcon from '@mui/icons-material/LocalMall';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link, useNavigate } from 'react-router-dom';
-import { signOut } from "../../helper/fetchApiData";
-import { isAuth } from "../../helper/authHelper";
+import { isAuth, signOut } from "../../helper/authHelper";
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 const Navbar = () => {
   const navigate = useNavigate()
   const { userInfo } = isAuth()
-  console.log(userInfo)
   const logoutHandler = () => {
     signOut()
     navigate("/login")
