@@ -12,46 +12,46 @@ import ManageProducts from "../../pages/Admin/manageProducts/ManageProducts"
 
 const Admin = () => {
 
-  const tabArr = [
-    {
-      lable: "Account settings",
-      component: () => <AccountSettings />
-    },
-    {
-      lable: "Add Products",
-      component: () => <AddProducts />
-    },
-    {
-      lable: "Create Category",
-      component: () => <AddCategory />
-    },
-    {
-      lable: "Manage Product",
-      component: () => <ManageProducts />
-    },
-    {
-      lable: "Manage Category",
-      component: () =><ManageCategory />
-    },
-    {
-      lable: "Manage Orders",
-      component: () => <div>three</div>
-    },
-    {
-      lable: "inventory",
-      component: () => <div>Four</div>
-    },
-  ]
-  return (
-    <PageLayout>
-      <Box sx={{ width: "60%", m: "auto" }}>
-      
-          <SideTab components={tabArr} />
-       
-      </Box>
-      <Toaster position="top-right" reverseOrder={false} />
-    </PageLayout>
-  )
+   const tabArr = [
+      {
+         lable: "Account settings",
+         component: () => <AccountSettings />
+      },
+      {
+         lable: "Add Products",
+         component: () => <AddProducts />
+      },
+      {
+         lable: "Create Category",
+         component: () => <AddCategory />
+      },
+      {
+         lable: "Manage Product",
+         component: () => <ManageProducts />
+      },
+      {
+         lable: "Manage Category",
+         component: () => <ManageCategory />
+      },
+      {
+         lable: "Manage Orders",
+         component: () => <div>three</div>
+      },
+      {
+         lable: "inventory",
+         component: () => <div>Four</div>
+      },
+   ]
+   return (
+      <PageLayout>
+         <Box sx={{ width: "60%", m: "auto" }}>
+
+            <SideTab components={tabArr} />
+
+         </Box>
+         <Toaster position="top-right" reverseOrder={false} />
+      </PageLayout>
+   )
 }
 
 export default Admin

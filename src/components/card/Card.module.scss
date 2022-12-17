@@ -2,7 +2,7 @@
 @import "../../../styles//mixins.module.scss";
 
 .card_wrapper {
-  max-width: 16rem;
+  width: 16rem;
   position: relative;
   background-color: $white;
   border-radius: 8px;
@@ -45,10 +45,12 @@
     h1 {
       font-size: 1.2rem;
       margin: 0;
+      @include text-overflow-hidden;
     }
     p {
       font-size: 1rem;
       margin: 0;
+      @include text-overflow-hidden;
     }
     .price {
       font-size: 1.2rem;

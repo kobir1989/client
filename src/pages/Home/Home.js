@@ -1,32 +1,31 @@
 import * as React from 'react';
 import PageLayout from "../../components/pageLayout/PageLayout";
 import { getRequest } from "../../helper/apiHelper";
-import Card from '../../components/card/Card';
+import styles from "./styles/Home.module.scss";
+import NewArrival from './newArrival/NewArrival';
 
 const Home = () => {
-  const [apiData, setApiData] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [isError, setIsError] = React.useState(false);
+   const [apiData, setApiData] = React.useState([]);
+   const [isLoading, setIsLoading] = React.useState(false);
+   const [isError, setIsError] = React.useState(false);
 
-  React.useEffect(() => {
-    getRequest("products", setIsLoading, setIsError, setApiData);
-  }, [])
-  console.log(apiData)
-  return (
-    <PageLayout>
-      <div>
-        {apiData.map((item) => (
-          <Card
-            img={item?.imageUrl}
-            title={item?.title}
-            description={item?.description}
-            price={item?.price}
-          />
-        ))}
-      </div>
-
-    </PageLayout>
-  )
+   React.useEffect(() => {
+      getRequest("products", setIsLoading, setIsError, setApiData);
+   }, [])
+   return (
+      <PageLayout>
+         {isError && <p>Something went wrong</p>}
+         <section className={styles.newarrival_section_wrapper}>
+            <div className={styles.newarrival_section_wrapper_title}>
+               <h2>Latest Arrival</h2>
+               <p>Our Latest Products to support you daily.</p>
+            </div>
+            <NewArrival
+               apiData={apiData}
+               isLoading={isLoading} />
+         </section>
+      </PageLayout>
+   )
 }
 
 export default Home;
