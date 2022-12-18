@@ -1,0 +1,17 @@
+@import "../../../../styles//colors.module.scss";
+.btn_white_bg {
+  button {
+    background-color: $white;
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    border-radius: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.9px;
+    &:hover{
+        background-color: $red;
+        color:$white;
+      }
+  }
+ 
+}

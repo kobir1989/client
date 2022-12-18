@@ -4,7 +4,7 @@ import NextArrow from '../../../components/buttons/NextArrow';
 import PrevArrow from '../../../components/buttons/PrevArrow';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "./Hero.module.scss";
+import styles from "../styles/Hero.module.scss";
 import ButtonSecondary from '../../../components/buttons/ButtonSecondary';
 
 const Hero = () => {

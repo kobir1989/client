@@ -1,0 +1,23 @@
+@import "../../../../styles/mixins.module.scss";
+.collection_cards {
+  @include flex-row;
+  gap: 2rem;
+  width: 100%;
+  .collection_img {
+    width: calc(100% / 3);
+    height: 32rem;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .btn{
+        position: absolute;
+        top:5%;
+        right: 5%;
+    }
+  }
+  
+}

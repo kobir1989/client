@@ -1,7 +1,7 @@
 @import "../../../../styles/colors.module.scss";
 @import "../../../../styles/mixins.module.scss";
 
-.newarrival_section_wrapper {
+.section_wrapper {
   margin-top: 3.5rem;
   &_title {
     @include flex-row-space-between;

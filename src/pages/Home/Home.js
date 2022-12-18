@@ -4,6 +4,7 @@ import { getRequest } from "../../helper/apiHelper";
 import styles from "./styles/Home.module.scss";
 import NewArrival from './newArrival/NewArrival';
 import Hero from './hero/Hero';
+import Collection from './collection/Collection';
 
 const Home = () => {
    const [apiData, setApiData] = React.useState([]);
@@ -16,17 +17,24 @@ const Home = () => {
    return (
       <PageLayout>
          {isError && <p>Something went wrong</p>}
-         <section className={styles.hero_section_wrapper}>
+         <section className={styles.section_wrapper}>
             <Hero />
          </section>
-         <section className={styles.newarrival_section_wrapper}>
-            <div className={styles.newarrival_section_wrapper_title}>
+         <section className={styles.section_wrapper}>
+            <div className={styles.section_wrapper_title}>
                <h2>Latest Arrival</h2>
                <p>Our Latest Products to support you daily.</p>
             </div>
             <NewArrival
                apiData={apiData}
                isLoading={isLoading} />
+         </section>
+         <section className={styles.section_wrapper}>
+         <div className={styles.section_wrapper_title}>
+               <h2>Explore Collections</h2>
+               <p>Looking For Exclusive Collections?</p>
+            </div>
+              <Collection />
          </section>
       </PageLayout>
    )
