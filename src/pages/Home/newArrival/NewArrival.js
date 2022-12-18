@@ -17,8 +17,8 @@ const NewArrival = ({ apiData, isLoading }) => {
       draggable: true,
       centerPadding: "0px",
       centerMode: true,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
+      nextArrow: <NextArrow mr={"-.5rem"}/>,
+      prevArrow: <PrevArrow ml={"-03rem"}/>,
    };
 
    const cards = () => {

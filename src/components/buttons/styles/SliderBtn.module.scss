@@ -1,21 +1,5 @@
-.arrow_right {
-    button {
-      border: unset;
-      background-color: unset;
-      position: absolute;
-      right: -0.2rem;
-      top: 50%;
-      cursor: pointer;
-    }
-  }
-  .arrow_left {
-    button {
-      border: unset;
-      background-color: unset;
-      position: absolute;
-      left: -2.8rem;
-      top: 50%;
-      cursor: pointer;
-    }
-  }
-  
+button {
+  border: unset;
+  background-color: unset;
+  cursor: pointer;
+}

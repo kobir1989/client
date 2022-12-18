@@ -1,0 +1,18 @@
+@import "../../../../styles/colors.module.scss";
+.btn_secondery {
+  button {
+    width: 12rem;
+    background-color: rgba(208, 255, 208, 0.192);
+    color: $white;
+    height: 2.8rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border: 1px solid $white;
+    margin-top: 1rem;
+    &:hover {
+      background-color: $red;
+    }
+  }
+}
