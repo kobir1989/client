@@ -5,6 +5,7 @@ import styles from "./styles/Home.module.scss";
 import NewArrival from './newArrival/NewArrival';
 import Hero from './hero/Hero';
 import Collection from './collection/Collection';
+import WinterStory from './winterStory/WinterStory';
 
 const Home = () => {
    const [apiData, setApiData] = React.useState([]);
@@ -30,12 +31,15 @@ const Home = () => {
                isLoading={isLoading} />
          </section>
          <section className={styles.section_wrapper}>
-         <div className={styles.section_wrapper_title}>
+            <div className={styles.section_wrapper_title}>
                <h2>Explore Collections</h2>
                <p>Looking For Exclusive Collections?</p>
             </div>
-              <Collection />
+            <Collection />
          </section>
+          <section className={styles.section_wrapper}>
+            <WinterStory />
+          </section>
       </PageLayout>
    )
 }

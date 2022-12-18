@@ -63,7 +63,7 @@ const Navbar = () => {
                {userInfo?.role === "USER" && (
                   <>
                      <Link to={"/profile"}>
-                        <li>{userInfo?.name || "Account"} <Avatar sx={{ background: "#96ce8b" }}>N</Avatar>
+                        <li>{userInfo?.name || "Account"} <Avatar sx={{ background: "#003532" }}>N</Avatar>
                         </li>
                      </Link>
                   </>
