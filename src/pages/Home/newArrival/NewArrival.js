@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import NextArrow from '../../../components/buttons/NextArrow';
 import PrevArrow from '../../../components/buttons/PrevArrow';
+import { Box } from '@mui/material';
 
 const NewArrival = ({ apiData, isLoading }) => {
    const settings = {
@@ -17,21 +18,24 @@ const NewArrival = ({ apiData, isLoading }) => {
       draggable: true,
       centerPadding: "0px",
       centerMode: true,
-      nextArrow: <NextArrow mr={"-.5rem"}/>,
-      prevArrow: <PrevArrow ml={"-03rem"}/>,
+      nextArrow: <NextArrow mr={"-.5rem"} />,
+      prevArrow: <PrevArrow ml={"-03rem"} />,
    };
-
+   const skletonArr = new Array(5).fill("empty")
    const cards = () => {
       return (
          apiData.map((item) => (
-            <div key={item?._id}>
-               <Card
-                  img={item?.imageUrl}
-                  title={item?.title}
-                  description={item?.description}
-                  price={item?.price}
-               />
-            </div>
+            <>
+               <div key={item?._id}>
+                  <Card
+                     img={item?.imageUrl}
+                     title={item?.title}
+                     description={item?.description}
+                     price={item?.price}
+                  />
+               </div>
+
+            </>
          ))
       )
    }
@@ -40,15 +44,21 @@ const NewArrival = ({ apiData, isLoading }) => {
          <Slider {...settings}>
             {cards()}
          </Slider>
-         {isLoading &&
-            <div>
-               <CustomSkeleton
-                  variant={"rect"}
-                  w={"85%"}
-                  h={300}
-               />
-               <TextSkeleton w={"45%"} />
-            </div>}
+         <Box sx={{ display: "flex" }}>
+            {isLoading && skletonArr.map((item, i) => (
+               <Box key={i}>
+                  <CustomSkeleton
+                     variant={"rect"}
+                     w={"85%"}
+                     h={300}
+                     row={1}
+                  />
+                  <TextSkeleton w={"85%"} row={1} />
+               </Box>
+            ))
+            }
+         </Box>
+
       </div>
    )
 }

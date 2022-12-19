@@ -6,6 +6,7 @@ import NewArrival from './newArrival/NewArrival';
 import Hero from './hero/Hero';
 import Collection from './collection/Collection';
 import WinterStory from './winterStory/WinterStory';
+import Sports from './sports/Sports';
 
 const Home = () => {
    const [apiData, setApiData] = React.useState([]);
@@ -39,6 +40,9 @@ const Home = () => {
          </section>
           <section className={styles.section_wrapper}>
             <WinterStory />
+          </section>
+          <section>
+            <Sports />
           </section>
       </PageLayout>
    )
