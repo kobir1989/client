@@ -8,6 +8,7 @@ import Admin from './pages/Admin/Admin';
 import { AdminPrivateRoute } from './helper/PrivateRoutes';
 import { UserPrivateRoute } from './helper/PrivateRoutes';
 import ContextProvider from './store/ContextProvider';
+import ShopingCart from './pages/shopingCart/ShopingCart';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
             </Route>
             <Route element={<UserPrivateRoute />}>
                <Route path='/profile' element={<UserProfile />} />
+               <Route path="/shoping-cart" element={<ShopingCart />} />
             </Route>
          </Routes>
       </ContextProvider>

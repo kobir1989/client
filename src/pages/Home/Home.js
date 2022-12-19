@@ -8,6 +8,7 @@ import Collection from './collection/Collection';
 import WinterStory from './winterStory/WinterStory';
 import Sports from './sports/Sports';
 
+
 const Home = () => {
    const [apiData, setApiData] = React.useState([]);
    const [isLoading, setIsLoading] = React.useState(false);
@@ -16,6 +17,8 @@ const Home = () => {
    React.useEffect(() => {
       getRequest("products", setIsLoading, setIsError, setApiData);
    }, [])
+
+  
    return (
       <PageLayout>
          {isError && <p>Something went wrong</p>}
@@ -38,12 +41,12 @@ const Home = () => {
             </div>
             <Collection />
          </section>
-          <section className={styles.section_wrapper}>
+         <section className={styles.section_wrapper}>
             <WinterStory />
-          </section>
-          <section>
+         </section>
+         <section>
             <Sports />
-          </section>
+         </section>
       </PageLayout>
    )
 }

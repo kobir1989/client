@@ -65,6 +65,7 @@ const ContextProvider = (props) => {
          items: item,
       });
    };
+   console.log(state, "STATE")
    const removeFromCart = (id) => {
       dispatch({
          type: 'REMOVE',
@@ -74,7 +75,6 @@ const ContextProvider = (props) => {
 
    const contextData = {
       items: state.items,
-      apiData: state.apiData,
       totalPrice: state.totalPrice,
       addItems: addTocartHandler,
       removeItem: removeFromCart,

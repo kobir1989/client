@@ -11,10 +11,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link, useNavigate } from 'react-router-dom';
 import { isAuth, signOut } from "../../helper/authHelper";
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import { Context } from "../../store/context";
 
 const Navbar = () => {
    const navigate = useNavigate()
    const { userInfo } = isAuth()
+   const ctx = React.useContext(Context);
    const logoutHandler = () => {
       signOut()
       navigate("/login")
@@ -49,10 +51,12 @@ const Navbar = () => {
 
                {userInfo?.role !== "ADMIN" &&
                   <>
-                     <li className={styles.cart}>
-                        Shoping Cart
-                        <span className={styles.count}>0</span> <LocalMallIcon />
-                     </li>
+                     <Link to={"/shoping-cart"}>
+                        <li className={styles.cart}>
+                           Shoping Cart
+                           <span className={styles.count}>{ctx.items.length || 0}</span> <LocalMallIcon />
+                        </li>
+                     </Link>
                      <li className={styles.wishlist}>
                         Wishlist
                         <span className={styles.count} style={{ right: "-0.2rem" }}>0</span><FavoriteBorderIcon />

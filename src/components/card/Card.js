@@ -3,7 +3,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from "./Card.module.scss";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-const Card = ({ img, title, description, price }) => {
+const Card = ({ img, title, description, price, addToCartHandler, id }) => {
    return (
       <div className={styles.card_wrapper}>
          <div className={styles.card_img_wrapper}>
@@ -18,7 +18,7 @@ const Card = ({ img, title, description, price }) => {
             <p className={styles.price}>${price}.00</p>
          </div>
          <div className={styles.card_btn_wrapper}>
-            <button className={styles.card_btn}>
+            <button className={styles.card_btn} onClick={() => { addToCartHandler(title, price, img, id) }}>
                <span>
                   Add
                </span>

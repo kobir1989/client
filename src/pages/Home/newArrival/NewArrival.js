@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import NextArrow from '../../../components/buttons/NextArrow';
 import PrevArrow from '../../../components/buttons/PrevArrow';
 import { Box } from '@mui/material';
+import { Context } from '../../../store/context';
 
 const NewArrival = ({ apiData, isLoading }) => {
    const settings = {
@@ -21,21 +22,31 @@ const NewArrival = ({ apiData, isLoading }) => {
       nextArrow: <NextArrow mr={"-.5rem"} />,
       prevArrow: <PrevArrow ml={"-03rem"} />,
    };
+   const ctx = React.useContext(Context);
+   const addToCartHandler = (title, price, img, id) => {
+      ctx.addItems({
+         title,
+         price,
+         id,
+         img,
+         qntt: 1,
+      })
+   }
+   console.log(ctx)
    const skletonArr = new Array(5).fill("empty")
    const cards = () => {
       return (
          apiData.map((item) => (
-            <>
-               <div key={item?._id}>
-                  <Card
-                     img={item?.imageUrl}
-                     title={item?.title}
-                     description={item?.description}
-                     price={item?.price}
-                  />
-               </div>
-
-            </>
+            <div key={item?._id}>
+               <Card
+                  img={item?.imageUrl}
+                  title={item?.title}
+                  description={item?.description}
+                  price={item?.price}
+                  id={item?._id}
+                  addToCartHandler={addToCartHandler}
+               />
+            </div>
          ))
       )
    }
@@ -58,7 +69,6 @@ const NewArrival = ({ apiData, isLoading }) => {
             ))
             }
          </Box>
-
       </div>
    )
 }
