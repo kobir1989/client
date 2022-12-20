@@ -56,6 +56,7 @@ const reducer = (state, action) => {
       };
    }
    return initialState;
+
 };
 const ContextProvider = (props) => {
    const [state, dispatch] = React.useReducer(reducer, initialState);
@@ -65,7 +66,6 @@ const ContextProvider = (props) => {
          items: item,
       });
    };
-   console.log(state, "STATE")
    const removeFromCart = (id) => {
       dispatch({
          type: 'REMOVE',

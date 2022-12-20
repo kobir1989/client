@@ -6,6 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
 import { style } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 const ShopingCart = () => {
    const cartCtx = React.useContext(Context)
@@ -51,8 +52,12 @@ const ShopingCart = () => {
                <h2>${cartCtx?.totalPrice.toFixed(2)}</h2>
             </div>
             <div className={styles.order_btn}>
-               <button>Place Order</button>
+               <Link to={"/place-order/address"}>
+                  <button>Place Order</button>
+               </Link>
+
             </div>
+
          </div>
       </PageLayout>
 

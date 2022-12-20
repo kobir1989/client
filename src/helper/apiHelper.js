@@ -15,9 +15,9 @@ export const getRequest = async (
    try {
       const response = await axios.get(`http://localhost:5000/api/${url}`);
       if (response.status === 200) {
-         setApiData(response.data.products)
+         setApiData(response?.data?.products || response.data)
          setIsLoading(false)
-         console.log(response)
+         console.log(response, "REs")
       }
    } catch (err) {
       console.log(err);

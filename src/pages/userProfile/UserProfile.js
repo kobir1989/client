@@ -24,7 +24,7 @@ const UserProfile = () => {
       },
       {
          lable: "Order history",
-         component: () => <div>three</div>
+         component: () => <div>ll</div>
       },
       {
          lable: "Account settings",
@@ -32,6 +32,7 @@ const UserProfile = () => {
       },
    ]
 
+   
    React.useEffect(() => {
       getRequest(
          `user/${userInfo._id}`,
